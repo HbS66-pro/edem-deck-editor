@@ -1,0 +1,4 @@
+case_id,case_type,rpm:Drum,d_mm:Ore,mass_kg:Feed_Factory,fill_duration_s,timestep_s,sim_time_s
+S01,low_speed,25,12,5.0,1.0,5.0e-6,10.0
+S02,nominal_speed,35,12,5.0,1.0,5.0e-6,10.0
+S03,coarse_feed,35,18,5.0,1.0,7.5e-6,10.0

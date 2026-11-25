@@ -1,0 +1,4 @@
+case_id,case_type,sf:Ore~Ore,rf:Ore~Ore,sf:Ore~Wall,rf:Ore~Wall,e:Ore~Wall,sim_time_s
+CAL01,low_friction,0.30,0.02,0.25,0.01,0.40,3.0
+CAL02,mid_friction,0.50,0.05,0.40,0.02,0.40,3.0
+CAL03,high_friction,0.70,0.10,0.55,0.05,0.30,3.0

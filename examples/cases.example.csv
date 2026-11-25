@@ -1,4 +1,4 @@
-case_id,case_type,rpm,steel_d_mm,ceramic_d_mm,steel_count,ceramic_count,timestep_us
+case_id,case_type,rpm,d_mm:Steel,d_mm:Ceramic,count:Steel_factory,count:Ceramic_factory,timestep_us
 C01,validation_steel_only,30,20,0,500,0,7.5
 C02,validation_ceramic_only,30,0,15,0,800,4.4
 C03,mixed_A,30,20,15,300,600,5.0
