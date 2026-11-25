@@ -51,13 +51,13 @@ $env:EDEM_BIN = Join-Path $env:ProgramFiles "Altair\2022.1\EDEM\bin\edem.exe"
 动手前先体检——文件状态、转轴方向、工厂绑定、周期边界、接触模型和 `.dfg` 求解块：
 
 ```bash
-python scripts/edem_set_param.py D:/cases/mill.dem --list
+python scripts/edem_set_param.py ./cases/mill.dem --list
 ```
 
 按工程单位改单个工况（40 r/min 顺时针、Φ18 mm 瓷球、1240 颗）：
 
 ```bash
-python scripts/edem_set_param.py D:/cases/case.dem \
+python scripts/edem_set_param.py ./cases/case.dem \
     --rpm 40 --clockwise \
     --diameter-mm 18 --radius-material Ceramic \
     --ball-count "Steel_factory=463" "Ceramic_factory=1240" --fill-duration 0.5 \
@@ -68,9 +68,9 @@ python scripts/edem_set_param.py D:/cases/case.dem \
 
 ```bash
 python scripts/edem_batch_from_xlsx.py \
-    --template D:/cases/mill.dem \
-    --xlsx D:/cases/cases.xlsx \
-    --out-dir D:/cases/batch \
+    --template ./cases/mill.dem \
+    --xlsx ./cases/cases.xlsx \
+    --out-dir ./cases/batch \
     --clockwise --dry-run
 ```
 

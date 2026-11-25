@@ -60,13 +60,13 @@ Inspect a deck before touching it — file state, rotation axis, factory binding
 physics models and the `.dfg` solver block:
 
 ```bash
-python scripts/edem_set_param.py D:/cases/mill.dem --list
+python scripts/edem_set_param.py ./cases/mill.dem --list
 ```
 
 Change one case in engineering units (40 r/min clockwise, Φ18 mm ceramic media, 1240 balls):
 
 ```bash
-python scripts/edem_set_param.py D:/cases/case.dem \
+python scripts/edem_set_param.py ./cases/case.dem \
     --rpm 40 --clockwise \
     --diameter-mm 18 --radius-material Ceramic \
     --ball-count "Steel_factory=463" "Ceramic_factory=1240" --fill-duration 0.5 \
@@ -77,9 +77,9 @@ Derive a whole matrix from an Excel table (dry run first — it prints every res
 
 ```bash
 python scripts/edem_batch_from_xlsx.py \
-    --template D:/cases/mill.dem \
-    --xlsx D:/cases/cases.xlsx \
-    --out-dir D:/cases/batch \
+    --template ./cases/mill.dem \
+    --xlsx ./cases/cases.xlsx \
+    --out-dir ./cases/batch \
     --clockwise --dry-run
 ```
 

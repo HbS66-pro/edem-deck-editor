@@ -67,10 +67,10 @@ $PY = $env:EDEM_PY
 $SC = ".\scripts\edem_set_param.py"
 
 # 1. 全面体检当前 deck（含文件 0 秒态、转轴方向、工厂绑定报警、周期边界、.dfg 求解设置）
-& $PY $SC "D:/cases/mill.dem" --list
+& $PY $SC "./cases/mill.dem" --list
 
 # 2. 一次性修好母版常见隐患（修工厂绑定、修衬板刚度密度、开滚动摩擦、关 Z 周期边界、开碰撞记录、重置回 0 秒）
-& $PY $SC "D:/cases/mill.dem" `
+& $PY $SC "./cases/mill.dem" `
     --reset-zero `
     --factory-type "Steel_factory=Steel_Ball" "Ceramic_factory=Ceramic_Ball" `
     --material-density "mill=7800" --material-shear "mill=7e10" --material-poisson "mill=0.3" `
@@ -80,7 +80,7 @@ $SC = ".\scripts\edem_set_param.py"
     --track-collisions 1 --sim-time 20 --save-interval 0.02 --threads 8
 
 # 3. 按工程单位改单个工况（如 40 r/min 顺时针、Φ18 mm 瓷球 1240 颗、0.5 s 下完料）
-& $PY $SC "D:/cases/case.dem" `
+& $PY $SC "./cases/case.dem" `
     --rpm 40 --clockwise `
     --diameter-mm 18 --radius-material Ceramic `
     --ball-count "Steel_factory=463" "Ceramic_factory=1240" --fill-duration 0.5 `
@@ -99,9 +99,9 @@ $BATCH = ".\scripts\edem_batch_from_xlsx.py"
 
 # 先 dry-run 预览全部参数映射
 & $PY $BATCH `
-    --template "D:/cases/mill.dem" `
-    --xlsx "D:/cases/cases.xlsx" `
-    --out-dir "D:/cases/batch" `
+    --template "./cases/mill.dem" `
+    --xlsx "./cases/cases.xlsx" `
+    --out-dir "./cases/batch" `
     --clockwise --dry-run
 ```
 
