@@ -56,6 +56,7 @@ def load_cases_from_xlsx(xlsx_path, sheet_name=None, data_start_row=2):
     """
     wb = openpyxl.load_workbook(xlsx_path, data_only=True)
     ws = wb[sheet_name] if sheet_name and sheet_name in wb.sheetnames else wb.active
+    print(f"[INFO] 工作表='{ws.title}', 数据起始行={data_start_row}")
     cases = []
     for r in range(data_start_row, ws.max_row + 1):
         code = ws.cell(r, 1).value

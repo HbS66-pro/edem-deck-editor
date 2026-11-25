@@ -28,6 +28,14 @@ import sys
 import h5py
 import numpy as np
 
+# Windows 控制台默认 GBK 时，状态标记里的 emoji 会抛 UnicodeEncodeError；
+# 只放宽错误处理，不改编码，保证中文正常显示。
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(errors='replace')
+    except (AttributeError, ValueError):
+        pass
+
 
 # ---------------------------------------------------------------- 基础路径与备份
 
