@@ -1,0 +1,4 @@
+case_id,case_type,_,rpm_rpm,_,steel_d_mm,ceramic_d_mm,_,_,_,steel_count,ceramic_count,_,_,_,timestep_us
+C01,validation_steel_only,,30,,20,0,,, ,500,0,,,,7.5
+C02,validation_ceramic_only,,30,,0,15,,,,0,800,,,,4.4
+C03,mixed_A,,30,,20,15,,,,300,600,,,,5.0

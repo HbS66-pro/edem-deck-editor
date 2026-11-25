@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vscode/
+.DS_Store
+
+# EDEM 仿真数据（体积大且与个人工况绑定，不入库）
+*.dem
+*.dfg
+*.efd
+*.ess
+*.ptf
+*.h5
+*_data/
+_edem_backup/
+*.res
+
+# 批量生成物
+batch/
+cases_batch/
+run_batch_edem.ps1
+
+# 内部立项与发布资料（不进仓库）
+EDEM-发布/
+blocklist.local.txt
