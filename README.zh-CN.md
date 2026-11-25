@@ -74,7 +74,9 @@ python scripts/edem_batch_from_xlsx.py \
     --clockwise --dry-run
 ```
 
-去掉 `--dry-run` 才真正克隆。每个工况一个文件夹，新的 `0.h5`、`num timesteps` 重置为 1，`.dfg` 带上自己的时间步与网格。输入表的列布局见 `examples/cases.example.csv`；工作表名、首个数据行、工厂名与材料名都可以在命令行覆盖。
+去掉 `--dry-run` 才真正克隆。每个工况一个文件夹，新的 `0.h5`、`num timesteps` 重置为 1，`.dfg` 带上自己的时间步与网格。
+
+列**按表头名识别，不看列序**——中英文别名都行（`case_id`、`rpm`、`steel_d_mm`、`ceramic_d_mm`、`steel_count`、`ceramic_count`、`timestep_us`，或 工况编号 / 目标转速 / 钢球直径 之类）。见 `examples/cases.example.csv`。`--sheet` 指到工作表，`--data-start-row` 指到首个数据行（表头默认取它的上一行，也可用 `--header-row` 单独指定）。缺列会直接报错并打印它看到的表头，而不是默默读错数字。
 
 ## 输出
 

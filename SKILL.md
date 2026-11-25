@@ -105,7 +105,7 @@ $BATCH = ".\scripts\edem_batch_from_xlsx.py"
     --clockwise --dry-run
 ```
 
-Excel 列布局见 `examples/cases.example.csv`（`--sheet` 指定工作表，`--data-start-row` 指定首个数据行，其余列号固定：A 工况编号、D 转速 rpm、F/G 钢球/瓷球直径 mm、K/L 钢球/瓷球颗数、P 时间步 μs）。工厂名、材料名用 `--steel-factory` / `--ceramic-factory` / `--steel-material` / `--ceramic-material` 按母版实际情况覆盖。
+Excel 的列按**表头名**识别，不看列序。必需表头（中英文别名均可）：工况编号 / `case_id`、转速 / `rpm`、钢球直径 / `steel_d_mm`、瓷球直径 / `ceramic_d_mm`、钢球数量 / `steel_count`、瓷球数量 / `ceramic_count`、时间步 / `timestep_us`；详见 `examples/cases.example.csv`。`--sheet` 指定工作表，`--data-start-row` 指定首个数据行（表头默认取它的上一行，也可用 `--header-row` 单独指定）。缺列会直接报错并打印该行识别到的表头。工厂名、材料名用 `--steel-factory` / `--ceramic-factory` / `--steel-material` / `--ceramic-material` 按母版实际情况覆盖。
 
 ## 控制台无界面求解与数据导出（`edem.exe` CLI）
 

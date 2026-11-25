@@ -84,9 +84,13 @@ python scripts/edem_batch_from_xlsx.py \
 ```
 
 Drop `--dry-run` to actually clone. Each case becomes its own folder with a fresh `0.h5`, a `num timesteps`
-reset to 1, and a `.dfg` carrying its own timestep and cell size. Column layout for the input table is
-documented in `examples/cases.example.csv`; override sheet, first data row, factory and material names on
-the command line.
+reset to 1, and a `.dfg` carrying its own timestep and cell size.
+
+Columns are resolved **by header name, not position** — Chinese or English aliases (`case_id`, `rpm`,
+`steel_d_mm`, `ceramic_d_mm`, `steel_count`, `ceramic_count`, `timestep_us`, or 工况编号 / 目标转速 / 钢球直径 …).
+See `examples/cases.example.csv`. Point `--sheet` at the right worksheet and `--data-start-row` at the first
+data row (the header row defaults to the line above it; override with `--header-row`). A missing column fails
+loudly and prints what it saw instead of reading the wrong numbers.
 
 ## Output
 
